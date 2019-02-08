@@ -9,12 +9,13 @@ using namespace std;
 int main() 
 {
     vector <string> fisherman;
-    string fishSearch = "test";
+    string fishSearch = "";
     ifstream myFile;
     myFile.open("final.txt");
     
     if(!myFile.is_open()) {
-            cout << "Could not open file" << endl;
+            cout << "Could not open file, please try again." << endl;
+            exit(1);
         } 
         else {
             string name;
@@ -25,15 +26,23 @@ int main()
                 combined = name + "     " + number + "  " + fish + "\n";
                 fisherman.push_back(combined);
                 }
-                fishSearch = number;
+                if (name == "Search") {
+                    fishSearch = number;
+                }
             }
-        for(vector<string>::iterator it=fisherman.begin();
-        it!=fisherman.end(); it++) {
-          cout << *it;
-          if *it.contains
+        for(vector<string>::iterator it=fisherman.begin(); it!=fisherman.end(); it++) {
+            cout << *it;
     } 
-    if (fishSearch != "test") {
-        cout << endl << "Type wanted: " << fishSearch;
+    cout << endl;
+    
+    if (fishSearch != "") {
+        cout << "Type wanted: " << fishSearch;
+        cout << endl << endl;
     }
+    else {
+        cout << "Error, the type of fish wanted was not specified." << endl << endl;
+        exit(1);
+    }
+    
     return 0;
 }

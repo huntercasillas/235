@@ -1,0 +1,15 @@
+You will create your own hash map between a string and a vector of strings to implement the application from lab 3 
+(Map that output text like a document).  
+
+The following requirements will apply to this lab:
+You create a O(1) implementation of a hashmap for adding and searching for strings in a the container.
+
+Create a O(n) implementation using a STL vector of strings for the storage of the keys 
+and a STL vector of vectors for storage of the values.  
+
+Use a sequential search through the vector to find the index of the key and then use that index to look up 
+the vector of context strings at that same index.
+
+Compare the performance of your hashmap with the vector implementation.
+
+Submit a report describing your experience (pdf)
